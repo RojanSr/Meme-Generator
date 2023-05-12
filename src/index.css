@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+}
+
+.flex {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.header--logo {
+  width: 60px;
+  height: 60px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  padding: 50px;
+  align-items: center;
+  /* 672280 */
+  /* A626D3 */
+  background: linear-gradient(90deg, #672280 1.15%, #a626d3 100%);
+}
+
+.header--title {
+  font-weight: 700;
+}
+
+.header--course {
+  font-weight: 400;
+  font-size: 1rem;
+}
