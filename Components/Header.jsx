@@ -1,14 +1,11 @@
 import React from "react";
+import Logo from "../images/troll-face.png";
 
 export default function Header() {
   return (
     <nav>
       <div className="flex">
-        <img
-          src="./images/troll-face.png"
-          alt="Logo"
-          className="header--logo"
-        />
+        <img src={Logo} alt="Logo" className="header--logo" />
         <h1 className="header--title">Meme Generator</h1>
       </div>
 

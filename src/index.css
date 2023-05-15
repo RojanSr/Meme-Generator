@@ -79,3 +79,26 @@ main {
   max-width: 400px;
   max-height: 400px;
 }
+
+@media (max-width: 410px) {
+  main {
+    padding: 15px 5px;
+  }
+
+  nav {
+    padding: 40px 5px;
+  }
+
+  .header--title {
+    font-size: 1rem;
+  }
+
+  .header--course {
+    font-size: 0.785rem;
+  }
+
+  .meme--img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
