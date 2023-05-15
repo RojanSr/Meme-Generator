@@ -43,6 +43,7 @@ nav {
 
 main {
   padding: 50px;
+  position: relative;
 }
 
 .form {
@@ -68,4 +69,13 @@ main {
   font-family: "Karla", sans-serif;
   cursor: pointer;
   height: 50px;
+}
+
+.meme--img {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  margin-top: 30px;
+  max-width: 400px;
+  max-height: 400px;
 }

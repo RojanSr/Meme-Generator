@@ -2,15 +2,17 @@ import React from "react";
 import memeImg from "../memesData";
 
 export default function Meme() {
+  const [imgurl, setImgurl] = React.useState("");
+
   function generateMeme() {
-    if (memeImg.success === true) {
-      const randIndex = Math.floor(Math.random() * memeImg.data.memes.length);
-
-      let url = memeImg.data.memes[randIndex].url;
-
-      console.log(url);
-      return url;
+    //Checking if there is error on the file
+    if (memeImg.success === false) {
+      return console.error("memesData Fetch Failure");
     }
+
+    //Getting random number from 0 to 100
+    const randIndex = Math.floor(Math.random() * memeImg.data.memes.length);
+    setImgurl(memeImg.data.memes[randIndex].url);
   }
 
   return (
@@ -22,6 +24,8 @@ export default function Meme() {
           Get a new Image 🌄
         </button>
       </div>
+
+      <img src={imgurl} alt="a new meme image" className="meme--img" />
     </main>
   );
 }
