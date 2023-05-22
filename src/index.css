@@ -115,6 +115,7 @@ main {
   position: absolute;
   right: 50%;
   transform: translateX(50%);
+  letter-spacing: 0.8px;
   font-size: 30px;
   text-transform: uppercase;
   text-align: center;
