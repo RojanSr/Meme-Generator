@@ -1,13 +1,24 @@
 import React from "react";
-import memeImg from "../memesData";
 
 export default function Meme() {
+  //State that stores a state object variable
   const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
     url: "https://i.imgflip.com/30b1gx.jpg",
   });
 
+  //State that stores an array of memes that consists of 100 objects with meme url
+  const [memesArray, setMemesArray] = React.useState();
+
+  //Fetching memes api then setting the memes array into memesArray state variable
+  React.useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => setMemesArray(data.data.memes));
+  }, []);
+
+  //This function handle every change in form input and stores in state to be rendered
   function handleChange(event) {
     const { name, value } = event.target;
     setMeme((prevState) => {
@@ -15,14 +26,12 @@ export default function Meme() {
     });
   }
 
+  //This function generate a random url meme then sets it up into meme.url state
   function generateMeme() {
-    //Checking if there is error on the file
-    if (memeImg.success === false) {
-      return console.error("memesData Fetch Failure");
-    }
     //Getting random number from 0 to 100
-    const randIndex = Math.floor(Math.random() * memeImg.data.memes.length);
-    setMeme(memeImg.data.memes[randIndex]);
+    const randIndex = Math.floor(Math.random() * memesArray.length);
+    // setMeme(memesArray[randIndex]);
+    setMeme((prevState) => ({ ...prevState, url: memesArray[randIndex].url }));
   }
 
   return (
@@ -32,6 +41,7 @@ export default function Meme() {
           type="text"
           className="form--input"
           placeholder="Top text"
+          // note: name here must be same as in state so that we can later provide value to those name key in object
           name="topText"
           onChange={handleChange}
           value={meme.topText}
