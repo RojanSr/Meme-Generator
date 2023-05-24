@@ -8,9 +8,7 @@ This is a basic meme generator website that allows users to create memes. Users 
 - [Screenshots](#screenshots)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Usage](#usage)
 - [What I Learned](#what-i-learned)
-- [License](#license)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
